@@ -1,0 +1,29 @@
+package codigo;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+
+    public void syntax_error(Symbol s){
+        this.s = s;
+    }
+
+    public Symbol getS(){
+        return this.s;
+    }
+:};
+
+terminal Int, Float, If, Else, Else_If, For, While, Imprimir,
+    Linea, ParentesisAbierto, ParentesisCerrado, LlaveAbierto, LlaveCerrado, Arreglo, OP_Igualdad, OP_Mayor,
+    OP_Menor, OP_MayorOIgual, OP_MenorOIgual, OP_NoIgual, Igual, Suma, Resta, Multiplicacion, Exponenciacion,
+    Division, Modulo, Main, NumeroDecimal, Identificador, Numero, Cadena, Error;
+non terminal INICIO, SENTENCIA, DECLARACION;
+
+start with INICIO;
+
+INICIO ::= Int Main ParentesisAbierto ParentesisCerrado LlaveAbierto SENTENCIA LlaveCerrado
+;
+SENTENCIA ::= Int Identificador | Int Identificador Igual Numero
+;
