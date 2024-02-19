@@ -12,12 +12,12 @@ espacio=[ ,\t,\r]+
 %%
 int {lexeme=yytext(); return Int;}
 float {lexeme=yytext(); return Float;}
-si | if {lexeme=yytext(); return Reservada_if;}
-else | entonces {lexeme=yytext(); return Reservada_else;}
-else if | si entonces {lexeme=yytext(); return Reservada_else_if;}
-para | for {lexeme=yytext(); return Reservada_for;}
-mientras | while {lexeme=yytext(); return Reservada_while;}
-print {lexeme=yytext(); return Reservada_imprimir;}
+si | if {lexeme=yytext(); return If;}
+else | entonces {lexeme=yytext(); return Else;}
+else if | si entonces {lexeme=yytext(); return Else_If;}
+para | for {lexeme=yytext(); return For;}
+mientras | while {lexeme=yytext(); return While;}
+print | imprimir {lexeme=yytext(); return Imprimir;}
 {espacio} {/*Ignore*/}
 "//".* {/*Ignore*/}
 "\n" {return Linea;}
@@ -44,4 +44,4 @@ print {lexeme=yytext(); return Reservada_imprimir;}
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 ("(-"{D}+")")|{D}+ {lexeme=yytext(); return Numero;}
 \"([^\"\n]|\\.)*\" {lexeme=yytext(); return Cadena;}
- . {return ERROR;}
+ . {return Error;}

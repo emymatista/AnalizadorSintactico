@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/emyma/OneDrive/Documentos/NetBeansProjects/AnalizadorSintactico/src/codigo/principal.java</file>
             <file>file:/C:/Users/emyma/OneDrive/Documentos/NetBeansProjects/AnalizadorSintactico/src/codigo/LexerCup.flex</file>
             <file>file:/C:/Users/emyma/OneDrive/Documentos/NetBeansProjects/AnalizadorSintactico/src/codigo/Sintax.cup</file>
-            <file>file:/C:/Users/emyma/OneDrive/Documentos/NetBeansProjects/AnalizadorSintactico/src/codigo/Lexer.flex</file>
+            <file>file:/C:/Users/emyma/OneDrive/Documentos/NetBeansProjects/AnalizadorSintactico/src/codigo/Lexer.java</file>
             <file>file:/C:/Users/emyma/OneDrive/Documentos/NetBeansProjects/AnalizadorSintactico/src/codigo/Tokens.java</file>
             <file>file:/C:/Users/emyma/OneDrive/Documentos/NetBeansProjects/AnalizadorSintactico/src/codigo/FrmAnalizador.java</file>
         </group>

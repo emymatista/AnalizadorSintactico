@@ -21,12 +21,13 @@ espacio=[ ,\t,\r,\n]+
 %%
 int {return new Symbol(sym.Int, yychar, yyline, yytext());}
 float {return new Symbol(sym.Float, yychar, yyline, yytext());}
+string {return new Symbol(sym.String, yychar, yyline, yytext());}
 si | if {return new Symbol(sym.If, yychar, yyline, yytext());}
 else | entonces {return new Symbol(sym.Else, yychar, yyline, yytext());}
 else if | si entonces {return new Symbol(sym.Else_If, yychar, yyline, yytext());}
 para | for {return new Symbol(sym.For, yychar, yyline, yytext());}
 mientras | while {return new Symbol(sym.While, yychar, yyline, yytext());}
-print {return new Symbol(sym.Imprimir, yychar, yyline, yytext());}
+print | imprimir {return new Symbol(sym.Imprimir, yychar, yyline, yytext());}
 {espacio} {/*Ignore*/}
 "//".* {/*Ignore*/}
 "(" {return new Symbol(sym.ParentesisAbierto, yychar, yyline, yytext());}

@@ -12,6 +12,7 @@ package codigo;
 public enum Tokens {
     Int,
     Float,
+    String,
     If,
     Else,
     Else_If,

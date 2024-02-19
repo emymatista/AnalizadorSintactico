@@ -6,13 +6,15 @@
 package codigo;
 
 import java.awt.Color;
+/*
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+*/
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Reader;
+//import java.io.PrintWriter;
+//import java.io.Reader;
 import java.io.StringReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -169,13 +171,14 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtResultadoSin = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
-        boton_sintactico = new javax.swing.JButton();
+        btn_analizarSin = new javax.swing.JButton();
+        btn_clear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Analizador Lexico");
 
@@ -184,7 +187,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
         txtEntrada.setRows(5);
         jScrollPane1.setViewportView(txtEntrada);
 
-        boton_lexico.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        boton_lexico.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
         boton_lexico.setText("Analyze");
         boton_lexico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,15 +207,23 @@ public class FrmAnalizador extends javax.swing.JFrame {
         txtResultadoSin.setRows(5);
         jScrollPane3.setViewportView(txtResultadoSin);
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Analizador Sintactico");
 
-        boton_sintactico.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        boton_sintactico.setText("Analyze");
-        boton_sintactico.addActionListener(new java.awt.event.ActionListener() {
+        btn_analizarSin.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
+        btn_analizarSin.setText("Analyze");
+        btn_analizarSin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boton_sintacticoActionPerformed(evt);
+                btn_analizarSinActionPerformed(evt);
+            }
+        });
+
+        btn_clear.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
+        btn_clear.setText("Clear");
+        btn_clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_clearActionPerformed(evt);
             }
         });
 
@@ -230,14 +241,16 @@ public class FrmAnalizador extends javax.swing.JFrame {
                         .addComponent(boton_lexico, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 7, Short.MAX_VALUE)))
+                        .addGap(0, 9, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addComponent(boton_sintactico, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(168, 168, 168))
+                .addGap(139, 139, 139)
+                .addComponent(btn_analizarSin, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(365, 365, 365)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -263,11 +276,12 @@ public class FrmAnalizador extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boton_sintactico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_analizarSin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(314, 314, 314))
+                .addGap(373, 373, 373))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -287,71 +301,31 @@ public class FrmAnalizador extends javax.swing.JFrame {
     private void boton_lexicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_lexicoActionPerformed
         try {
             analizarLexico();
-            /*
-            File archivo = new File("archivo.txt");
-            PrintWriter escribir;
-            
-            try {
-            escribir = new PrintWriter(archivo);
-            escribir.print(txtEntrada.getText());
-            escribir.close();
-            } catch (FileNotFoundException ex) {
-            Logger.getLogger(FrmAnalizador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            try {
-            Reader lector = new BufferedReader(new FileReader("archivo.txt"));
-            Lexer lexer = new Lexer(lector);
-            String resultado = "";
-            while (true ) {
-            Tokens tokens = lexer.yylex();
-            if(tokens == null){
-            resultado += "FIN";
-            txtResultadoLex.setText(resultado);
-            return;
-            }
-            switch (tokens) {
-            case ERROR:
-            resultado += "Simbolo no definido\n";
-            break;
-            case Identificador: case Numero: case Reservada: case Reservada_if:
-            case Reservada_else: case Reservada_else_if: case Reservada_for: case Reservada_while:
-            case Reservada_imprimir:
-            resultado += lexer.lexeme + ": Es un " + tokens + "\n";
-            break;
-            default:
-            resultado += "Token: " + tokens + "\n";
-            break;
-            }
-            }
-            
-            } catch (FileNotFoundException ex) {
-            Logger.getLogger(FrmAnalizador.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-            Logger.getLogger(FrmAnalizador.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            */
         } catch (IOException ex) {
             Logger.getLogger(FrmAnalizador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_boton_lexicoActionPerformed
 
-    private void boton_sintacticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_sintacticoActionPerformed
-       String ST = txtEntrada.getText();
-       Sintax s = new Sintax(new codigo.LexerCup(new StringReader(ST)));
-       
-       try{
-           s.parse();
-           txtResultadoSin.setText("Analisis realizado correctamente");
-           txtResultadoSin.setForeground(new Color(25, 111, 61));
-           
-       } catch (Exception ex) {
+    private void btn_analizarSinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_analizarSinActionPerformed
+        String ST = txtEntrada.getText();
+        Sintax s = new Sintax(new codigo.LexerCup(new StringReader(ST)));
+
+        try {
+            s.parse();
+            txtResultadoSin.setText("Analisis realizado correctamente");
+            txtResultadoSin.setForeground(new Color(25, 111, 61));
+
+        } catch (Exception ex) {
             Symbol sym = s.getS();
             txtResultadoSin.setText("Error de sintaxis. Linea: " + (sym.right + 1) + " Columna: " + (sym.left + 1) + ", Texto: \"" + sym.value + "\"");
             txtResultadoSin.setForeground(Color.red);
-            
+
         }
-    }//GEN-LAST:event_boton_sintacticoActionPerformed
+    }//GEN-LAST:event_btn_analizarSinActionPerformed
+
+    private void btn_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clearActionPerformed
+        txtResultadoSin.setText("");
+    }//GEN-LAST:event_btn_clearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -390,7 +364,8 @@ public class FrmAnalizador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_lexico;
-    private javax.swing.JButton boton_sintactico;
+    private javax.swing.JButton btn_analizarSin;
+    private javax.swing.JButton btn_clear;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
